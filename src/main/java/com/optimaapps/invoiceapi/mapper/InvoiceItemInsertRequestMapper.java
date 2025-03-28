@@ -10,6 +10,8 @@ import java.math.BigDecimal;
 
 public class InvoiceItemInsertRequestMapper {
 
+    private InvoiceItemInsertRequestMapper(){}
+
     public static InvoiceItem toInvoice(InvoiceItemInsertRequestDTO invoiceItemInsertRequestDTO, BigDecimal amount) {
         InvoiceItem invoiceItem = new InvoiceItem();
         Invoice invoice = new Invoice();
@@ -21,9 +23,5 @@ public class InvoiceItemInsertRequestMapper {
         invoiceItem.setQuantity(invoiceItemInsertRequestDTO.getQuantity());
         invoiceItem.setAmount(amount);
         return invoiceItem;
-    }
-
-    private static BigDecimal calculateAmount(Integer quantity, BigDecimal productPrice){
-        return productPrice.multiply(BigDecimal.valueOf(quantity));
     }
 }

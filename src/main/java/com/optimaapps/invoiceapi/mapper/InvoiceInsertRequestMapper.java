@@ -6,6 +6,8 @@ import com.optimaapps.invoiceapi.entity.Invoice;
 
 public class InvoiceInsertRequestMapper {
 
+    private InvoiceInsertRequestMapper(){}
+
     public static Invoice toInvoice(InvoiceInsertRequestDTO invoiceInsertRequestDTO) {
         Invoice invoice = new Invoice();
         invoice.setTotalAmount(invoiceInsertRequestDTO.getTotalAmount());
